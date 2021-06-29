@@ -11,13 +11,11 @@ router.get("/branches/autocomplete", (req, res) => {
         if (req.query.q) {
             qry = req.query.q;
 
-            var l, oset;
+            var l=0, oset;
             if (req.query.limit) {
                 l = parseInt(req.query.limit);
             }
-            else {
-                l = 5;
-            }
+            
             if (req.query.offset) {
                 oset = parseInt(req.query.offset);
             }
@@ -57,13 +55,11 @@ router.get("/branches", (req, res) => {
         if (req.query.q) {
             qry = req.query.q;
 
-            var l, oset;
+            var l=0, oset;
             if (req.query.limit) {
                 l = parseInt(req.query.limit);
             }
-            else {
-                l = 5;
-            }
+
             if (req.query.offset) {
                 oset = parseInt(req.query.offset);
             }
