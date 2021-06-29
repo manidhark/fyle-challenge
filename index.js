@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
 
 const port = process.env.PORT || 8000;
 
@@ -21,6 +22,8 @@ mongoose.connect(url,connectionParams)
     .catch( (err) => {
         console.error(`Error connecting to the database. \n${err}`);
     })
+
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.status(200).send("Fyle Full Stack Development Challenge");
